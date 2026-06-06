@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from "react";
 import { CategoryBar } from "@/components/CategoryBar";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
@@ -39,7 +40,16 @@ export default function RootLayout({
       <body className="min-h-screen font-sans antialiased">
         <StoreProvider>
           <Navbar />
-          <CategoryBar />
+          <Suspense
+            fallback={
+              <div
+                className="h-[65px] border-b border-slate-200 bg-white"
+                aria-hidden="true"
+              />
+            }
+          >
+            <CategoryBar />
+          </Suspense>
           <main>{children}</main>
           <Footer />
         </StoreProvider>

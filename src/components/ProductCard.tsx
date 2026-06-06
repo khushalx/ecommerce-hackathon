@@ -25,10 +25,10 @@ export function ProductCard({
   }
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition-shadow hover:shadow-lg">
+    <article className="group h-fit self-start overflow-hidden rounded-xl border border-slate-200 bg-white transition-shadow hover:shadow-lg">
       <Link
         href={`/product/${product.id}`}
-        className="relative block aspect-square overflow-hidden bg-slate-50"
+        className="relative block h-44 overflow-hidden bg-slate-50 sm:h-48"
       >
         {product.badge && (
           <span className="absolute left-3 top-3 z-10 rounded-md bg-white px-2.5 py-1 text-xs font-bold text-slate-800 shadow-sm">
@@ -45,18 +45,18 @@ export function ProductCard({
         />
       </Link>
 
-      <div className="flex flex-1 flex-col p-4">
+      <div className="p-3 sm:p-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
           {product.brand}
         </p>
         <Link
           href={`/product/${product.id}`}
-          className="mt-1 line-clamp-2 min-h-12 text-sm font-semibold leading-6 text-slate-900 hover:text-blue-700"
+          className="mt-1 line-clamp-2 block text-sm font-semibold leading-5 text-slate-900 hover:text-blue-700"
         >
           {product.title}
         </Link>
 
-        <div className="mt-2 flex items-center gap-2">
+        <div className="mt-2 flex items-center gap-1.5">
           <span className="inline-flex items-center gap-1 rounded bg-emerald-700 px-1.5 py-0.5 text-xs font-bold text-white">
             {product.rating}
             <Star size={11} fill="currentColor" />
@@ -66,7 +66,7 @@ export function ProductCard({
           </span>
         </div>
 
-        <div className="mt-3 flex flex-wrap items-baseline gap-x-2">
+        <div className="mt-2.5 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
           <span className="text-lg font-bold text-slate-950">
             {formatPrice(product.price)}
           </span>
@@ -81,7 +81,7 @@ export function ProductCard({
         <button
           type="button"
           onClick={handleAddToCart}
-          className={`mt-4 inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg border text-sm font-bold ${
+          className={`mt-3 inline-flex h-9 w-full items-center justify-center gap-2 rounded-lg border text-sm font-bold ${
             added
               ? "border-emerald-600 bg-emerald-50 text-emerald-700"
               : "border-blue-600 text-blue-700 hover:bg-blue-50"
