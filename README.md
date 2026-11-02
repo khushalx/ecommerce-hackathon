@@ -34,14 +34,4 @@ It follows a practical marketplace-style layout with product browsing, category 
 
 - Local mock product data
 
-## Pages
 
-- Home
-
-- Products
-
-- Product Details
-
-- Cart
-
-- Login / Signup UI
